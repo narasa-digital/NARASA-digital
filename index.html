@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NARASA Digital | Bahasa dan Budaya</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Georgia, serif;
+  background: #f8f5ef;
+  color: #303c32;
+}
+header {
+  background: #304b3c;
+  color: white;
+  padding: 25px 8%;
+  text-align: center;
+}
+header h1 {
+  font-size: 42px;
+  letter-spacing: 5px;
+}
+header p {
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+nav {
+  background: #e9e1d3;
+  padding: 16px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+nav a {
+  color: #304b3c;
+  text-decoration: none;
+  margin: 0 16px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.hero {
+  padding: 65px 8%;
+  text-align: center;
+  background: #e8dfd0;
+}
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.hero p {
+  line-height: 1.8;
+  max-width: 650px;
+  margin: auto;
+}
+.hero span {
+  color: #a35e43;
+}
+.container {
+  padding: 45px 8%;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 27px;
+}
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 25px;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px #00000012;
+}
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 20px;
+}
+.card small {
+  color: #a35e43;
+  font-weight: bold;
+}
+.card h3 {
+  margin: 12px 0;
+  font-size: 20px;
+}
+.card p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #a35e43;
+  text-decoration: none;
+  font-weight: bold;
+}
+.about {
+  background: #e9e1d3;
+  padding: 45px 10%;
+  text-align: center;
+  line-height: 1.9;
+}
+footer {
+  background: #304b3c;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  line-height: 1.8;
+}
+@media(max-width:600px) {
+  header h1 { font-size: 32px; }
+  nav a { margin: 0 7px; font-size: 12px; }
+  .hero h2 { font-size: 27px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>NARASA</h1>
+  <p>DIGITAL MAGAZINE</p>
+</header>
+
+<nav>
+  <a href="#beranda">Beranda</a>
+  <a href="#artikel">Artikel</a>
+  <a href="#budaya">Budaya</a>
+  <a href="#tentang">Tentang</a>
+</nav>
+
+<section class="hero" id="beranda">
+  <h2>Ruang Cerita, <span>Bahasa dan Budaya</span></h2>
+  <p>
+    Selamat datang di NARASA Digital, ruang untuk berbagi
+    informasi, kreativitas, bahasa, sastra, dan kekayaan budaya
+    melalui beragam cerita yang menarik.
+  </p>
+</section>
+
+<section class="container" id="artikel">
+  <h2 class="section-title">Jelajahi Cerita Kami</h2>
+
+  <div class="articles">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800" alt="Buku">
+      <div class="card-content">
+        <small>SASTRA</small>
+        <h3>Mengenal Dunia Sastra</h3>
+        <p>Menjelajahi karya sastra sebagai bagian dari kehidupan dan kebudayaan.</p>
+        <a href="#tentang">Baca selengkapnya →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Budaya">
+      <div class="card-content">
+        <small>BUDAYA</small>
+        <h3>Warisan Budaya Nusantara</h3>
+        <p>Mengenal keberagaman tradisi dan budaya yang menjadi identitas bangsa.</p>
+        <a href="#tentang">Baca selengkapnya →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800" alt="Menulis">
+      <div class="card-content">
+        <small>BAHASA</small>
+        <h3>Bahasa dalam Kehidupan</h3>
+        <p>Bahasa sebagai sarana komunikasi dan penghubung antarmanusia.</p>
+        <a href="#tentang">Baca selengkapnya →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="budaya">
+  <h2>Bahasa dan Budaya</h2>
+  <p>
+    Bahasa dan budaya merupakan bagian penting dari kehidupan
+    masyarakat. Keduanya perlu dijaga dan dikenalkan kepada
+    generasi selanjutnya.
+  </p>
+</section>
+
+<section class="about" id="tentang">
+  <h2>Tentang NARASA Digital</h2>
+  <p>
+    NARASA Digital merupakan majalah digital yang menjadi ruang
+    kreativitas dan informasi seputar bahasa, sastra, pendidikan,
+    serta budaya.
+  </p>
+</section>
+
+<footer>
+  <h3>NARASA DIGITAL</h3>
+  <p>Ruang Cerita, Bahasa dan Budaya</p>
+  <p>© 2026 NARASA Digital. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
