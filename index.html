@@ -4,210 +4,992 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NARASA Digital | Bahasa dan Budaya</title>
+<title>NARASA Digital | Ruang Karya dan Cerita Mahasiswa</title>
+
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blue: #526f8c;
+  --dark-blue: #304b66;
+  --light-blue: #dce7ef;
+  --yellow: #e8c66b;
+  --sage: #a9b9a3;
+  --cream: #f8f6ef;
+  --white: #ffffff;
+  --ink: #293746;
+  --muted: #718092;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Georgia, serif;
-  background: #f8f5ef;
-  color: #303c32;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
 }
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
 header {
-  background: #304b3c;
-  color: white;
-  padding: 25px 8%;
-  text-align: center;
-}
-header h1 {
-  font-size: 42px;
-  letter-spacing: 5px;
-}
-header p {
-  margin-top: 8px;
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-nav {
-  background: #e9e1d3;
-  padding: 16px;
-  text-align: center;
+  background: var(--white);
+  border-bottom: 1px solid #e5e5df;
+  padding: 17px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
-nav a {
-  color: #304b3c;
-  text-decoration: none;
-  margin: 0 16px;
-  font-size: 14px;
+
+.logo {
+  color: var(--dark-blue);
+  font-size: 27px;
   font-weight: bold;
+  letter-spacing: 3px;
 }
+
+.logo small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.nav-home {
+  border: none;
+  background: var(--dark-blue);
+  color: white;
+  padding: 9px 19px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+main {
+  min-height: 75vh;
+}
+
+.page {
+  display: none;
+  animation: appear .35s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  width: min(1100px, 88%);
+  margin: auto;
+}
+
 .hero {
-  padding: 65px 8%;
+  background: var(--light-blue);
+  padding: 85px 7% 90px;
   text-align: center;
-  background: #e8dfd0;
+  position: relative;
+  overflow: hidden;
 }
+
+.hero-label {
+  color: var(--dark-blue);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 66px);
+  color: var(--dark-blue);
+  letter-spacing: 3px;
+  line-height: 1.15;
+}
+
 .hero h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
+  font-size: clamp(15px, 2vw, 21px);
+  font-weight: normal;
+  margin-top: 15px;
+  color: #536b80;
 }
+
 .hero p {
+  max-width: 620px;
+  margin: 24px auto 0;
+  color: #526477;
+  font-size: 15px;
+}
+
+.hero-line {
+  width: 65px;
+  height: 4px;
+  background: var(--yellow);
+  margin: 28px auto 0;
+}
+
+.section-heading {
+  text-align: center;
+  padding: 60px 0 32px;
+}
+
+.section-heading span {
+  color: #9b854b;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  color: var(--dark-blue);
+  font-size: 31px;
+  margin-top: 7px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  padding-bottom: 75px;
+}
+
+.menu-card {
+  min-height: 245px;
+  border: 1px solid #e4e1d8;
+  background: white;
+  padding: 30px 25px;
+  text-align: left;
+  border-radius: 8px;
+  transition: .25s;
+  color: var(--ink);
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px #304b6618;
+  border-color: var(--yellow);
+}
+
+.menu-number {
+  color: #b39855;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.menu-card h3 {
+  color: var(--dark-blue);
+  font-size: 25px;
+  margin: 20px 0 10px;
+}
+
+.menu-card p {
+  font-family: Arial, sans-serif;
+  color: var(--muted);
+  font-size: 13px;
   line-height: 1.8;
+}
+
+.menu-link {
+  display: inline-block;
+  margin-top: 23px;
+  color: var(--dark-blue);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.intro-note {
+  background: #e9eee6;
+  padding: 35px 20px;
+  text-align: center;
+  color: #52634f;
+  margin-bottom: 70px;
+  border-radius: 7px;
+}
+
+.intro-note h3 {
+  font-size: 21px;
+  margin-bottom: 7px;
+}
+
+.intro-note p {
+  font-size: 14px;
   max-width: 650px;
   margin: auto;
 }
-.hero span {
-  color: #a35e43;
-}
-.container {
-  padding: 45px 8%;
-}
-.section-title {
+
+/* HALAMAN DALAM */
+
+.inner-hero {
+  background: var(--light-blue);
+  padding: 55px 7%;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 27px;
 }
-.articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-  gap: 25px;
+
+.inner-hero .eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #9b854b;
+  text-transform: uppercase;
 }
-.card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 12px #00000012;
+
+.inner-hero h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--dark-blue);
+  margin-top: 8px;
 }
-.card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-.card-content {
-  padding: 20px;
-}
-.card small {
-  color: #a35e43;
-  font-weight: bold;
-}
-.card h3 {
-  margin: 12px 0;
-  font-size: 20px;
-}
-.card p {
-  line-height: 1.6;
+
+.inner-hero p {
+  color: #61758a;
   font-size: 14px;
+  margin-top: 8px;
 }
-.card a {
-  display: inline-block;
-  margin-top: 15px;
-  color: #a35e43;
-  text-decoration: none;
-  font-weight: bold;
+
+.back-button {
+  border: 1px solid #cbd4dc;
+  background: white;
+  color: var(--dark-blue);
+  padding: 9px 17px;
+  border-radius: 5px;
+  margin: 28px 0 0;
+  font-size: 13px;
 }
-.about {
-  background: #e9e1d3;
-  padding: 45px 10%;
+
+.back-button:hover {
+  background: var(--dark-blue);
+  color: white;
+}
+
+.content-area {
+  padding: 45px 0 80px;
+}
+
+/* MAJALAH */
+
+.magazine-box {
+  max-width: 850px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 35px;
+  align-items: center;
+  background: white;
+  border: 1px solid #e8e5dc;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.magazine-cover {
+  min-height: 360px;
+  background: linear-gradient(145deg, #304b66, #7791a5);
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
+  box-shadow: 5px 7px 15px #263c5325;
+}
+
+.magazine-cover .cover-small {
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.magazine-cover h2 {
+  font-size: 38px;
+  letter-spacing: 4px;
+}
+
+.magazine-cover .cover-subtitle {
+  font-size: 12px;
+  color: #f2dfab;
+}
+
+.magazine-info h2 {
+  color: var(--dark-blue);
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+.magazine-info p {
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.pdf-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 11px 20px;
+  background: var(--dark-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 650px;
+  border: 1px solid #ddd;
+  margin-top: 35px;
+  background: white;
+}
+
+/* FEATURE DAN PROFIL */
+
+.search-box {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto 28px;
+  padding: 13px 16px;
+  border: 1px solid #d8dce0;
+  border-radius: 5px;
+  background: white;
+  font-size: 14px;
+  outline-color: var(--blue);
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.item-card {
+  background: white;
+  border: 1px solid #e7e4dc;
+  border-radius: 7px;
+  padding: 22px;
+  text-align: left;
+  color: var(--ink);
+  transition: .2s;
+  min-height: 150px;
+}
+
+.item-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px #304b6612;
+}
+
+.item-card .item-no {
+  font-size: 11px;
+  color: #a38a4b;
+  letter-spacing: 2px;
+}
+
+.item-card h3 {
+  color: var(--dark-blue);
+  font-size: 19px;
+  margin: 9px 0;
+}
+
+.item-card p {
+  font-family: Arial, sans-serif;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.profile-photo {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--light-blue);
+  margin-bottom: 13px;
+  display: block;
+}
+
+.profile-initial {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: var(--light-blue);
+  color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 13px;
+}
+
+/* DETAIL */
+
+.detail-card {
+  max-width: 820px;
+  margin: auto;
+  background: white;
+  border: 1px solid #e7e4dc;
+  border-radius: 8px;
+  padding: 38px;
+}
+
+.detail-card h2 {
+  color: var(--dark-blue);
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.detail-meta {
+  color: #9a854f;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.detail-body {
+  white-space: pre-line;
+  color: #4d5965;
+  font-size: 16px;
   line-height: 1.9;
 }
-footer {
-  background: #304b3c;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  line-height: 1.8;
+
+.profile-detail-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+  background: var(--light-blue);
 }
-@media(max-width:600px) {
-  header h1 { font-size: 32px; }
-  nav a { margin: 0 7px; font-size: 12px; }
-  .hero h2 { font-size: 27px; }
+
+.profile-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-top: 25px;
+}
+
+.fact {
+  background: #f3f5f1;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.fact span {
+  display: block;
+  color: #9a854f;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.fact strong {
+  color: var(--dark-blue);
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.quote {
+  margin-top: 25px;
+  background: #f7f1df;
+  padding: 20px;
+  color: #75623b;
+  font-style: italic;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px;
+  grid-column: 1 / -1;
+}
+
+footer {
+  background: var(--dark-blue);
+  color: #e4eaf0;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 12px;
+}
+
+footer strong {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 750px) {
+  header {
+    padding: 14px 6%;
+  }
+
+  .menu-grid,
+  .item-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .magazine-box {
+    grid-template-columns: 1fr;
+  }
+
+  .magazine-cover {
+    max-width: 280px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .profile-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-card {
+    padding: 24px;
+  }
+
+  .pdf-frame {
+    height: 500px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>NARASA</h1>
-  <p>Ruang Karya dan Cerita Mahasiswa</p>
+  <div class="logo">
+    NARASA
+    <small>DIGITAL MAGAZINE</small>
+  </div>
+  <button class="nav-home" onclick="goHome()">Beranda</button>
 </header>
 
-<nav>
-  <a href="#beranda">Beranda</a>
-  <a href="#artikel">Artikel</a>
-  <a href="#budaya">Budaya</a>
-  <a href="#tentang">Tentang</a>
-</nav>
+<main>
 
-<section class="hero" id="beranda">
-  <h2>Ruang Ekspresi, Informasi, <span>dan Kreativitas Mahasiswa.</span></h2>
-  <p>
-    Selamat datang di NARASA Digital, ruang untuk berbagi
-    informasi, kreativitas, bahasa, sastra, dan kekayaan budaya
-    melalui beragam cerita yang menarik.
-  </p>
-</section>
+<!-- BERANDA -->
+<section id="home" class="page active">
 
-<section class="container" id="artikel">
-  <h2 class="section-title">Jelajahi Cerita Kami</h2>
+  <div class="hero">
+    <div class="hero-label">Majalah Digital Mahasiswa</div>
+    <h1>NARASA</h1>
+    <h2>Ruang Karya dan Cerita Mahasiswa</h2>
+    <div class="hero-line"></div>
+    <p>
+      Sebuah ruang untuk mempertemukan gagasan, informasi,
+      kreativitas, dan berbagai cerita melalui karya mahasiswa.
+    </p>
+  </div>
 
-  <div class="articles">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800" alt="Buku">
-      <div class="card-content">
-        <small>SASTRA</small>
-        <h3>Mengenal Dunia Sastra</h3>
-        <p>Menjelajahi karya sastra sebagai bagian dari kehidupan dan kebudayaan.</p>
-        <a href="#tentang">Baca selengkapnya →</a>
-      </div>
+  <div class="container">
+    <div class="section-heading">
+      <span>Jelajahi NARASA</span>
+      <h2>Temukan Cerita di Sini</h2>
+      <p>Pilih ruang yang ingin kamu kunjungi.</p>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Budaya">
-      <div class="card-content">
-        <small>BUDAYA</small>
-        <h3>Warisan Budaya Nusantara</h3>
-        <p>Mengenal keberagaman tradisi dan budaya yang menjadi identitas bangsa.</p>
-        <a href="#tentang">Baca selengkapnya →</a>
-      </div>
+    <div class="menu-grid">
+
+      <button class="menu-card" onclick="showPage('magazine')">
+        <span class="menu-number">01 / BACAAN</span>
+        <h3>Majalah</h3>
+        <p>
+          Baca dan jelajahi majalah digital NARASA
+          dalam satu ruang khusus.
+        </p>
+        <span class="menu-link">BUKA MAJALAH →</span>
+      </button>
+
+      <button class="menu-card" onclick="showPage('features')">
+        <span class="menu-number">02 / KARYA</span>
+        <h3>Feature</h3>
+        <p>
+          Temukan 37 tulisan feature yang berisi
+          gagasan dan cerita dari mahasiswa.
+        </p>
+        <span class="menu-link">JELAJAHI FEATURE →</span>
+      </button>
+
+      <button class="menu-card" onclick="showPage('profiles')">
+        <span class="menu-number">03 / PROFIL</span>
+        <h3>Profil Mahasiswa</h3>
+        <p>
+          Kenali mahasiswa melalui profil, hobi,
+          cita-cita, dan kata-kata favorit mereka.
+        </p>
+        <span class="menu-link">KENALI MAHASISWA →</span>
+      </button>
+
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800" alt="Menulis">
-      <div class="card-content">
-        <small>BAHASA</small>
-        <h3>Bahasa dalam Kehidupan</h3>
-        <p>Bahasa sebagai sarana komunikasi dan penghubung antarmanusia.</p>
-        <a href="#tentang">Baca selengkapnya →</a>
-      </div>
+    <div class="intro-note">
+      <h3>Ruang Ekspresi, Informasi, dan Kreativitas Mahasiswa</h3>
+      <p>
+        NARASA menjadi tempat bagi mahasiswa untuk berbagi
+        karya, menyampaikan pemikiran, dan memperkenalkan
+        cerita mereka kepada pembaca.
+      </p>
     </div>
-
   </div>
 </section>
 
-<section class="about" id="budaya">
-  <h2>Bahasa dan Budaya</h2>
-  <p>
-    Bahasa dan budaya merupakan bagian penting dari kehidupan
-    masyarakat. Keduanya perlu dijaga dan dikenalkan kepada
-    generasi selanjutnya.
-  </p>
+
+<!-- HALAMAN MAJALAH -->
+<section id="magazine" class="page">
+  <div class="inner-hero">
+    <div class="eyebrow">NARASA DIGITAL</div>
+    <h1>Majalah</h1>
+    <p>Satu ruang untuk membaca majalah digital NARASA.</p>
+  </div>
+
+  <div class="container content-area">
+    <button class="back-button" onclick="goHome()">← Kembali ke Beranda</button>
+
+    <div class="magazine-box">
+      <div class="magazine-cover">
+        <div class="cover-small">MAJALAH DIGITAL MAHASISWA</div>
+        <h2>NARASA</h2>
+        <div class="cover-subtitle">
+          RUANG KARYA DAN CERITA MAHASISWA
+        </div>
+        <div class="cover-small">EDISI PERDANA</div>
+      </div>
+
+      <div class="magazine-info">
+        <h2>Majalah NARASA</h2>
+        <p>
+          Selamat datang di ruang baca NARASA.
+          Di sini pembaca dapat menikmati majalah digital
+          yang memuat berbagai karya dan informasi mahasiswa.
+        </p>
+        <p>
+          Majalah ini hanya menampilkan satu edisi utama
+          yang dapat diperbarui ketika ada penerbitan berikutnya.
+        </p>
+        <a class="pdf-button" href="majalah.pdf" target="_blank">
+          Buka Majalah PDF →
+        </a>
+      </div>
+    </div>
+
+    <iframe
+      class="pdf-frame"
+      src="majalah.pdf"
+      title="Majalah NARASA">
+    </iframe>
+  </div>
 </section>
 
-<section class="about" id="tentang">
-  <h2>Tentang NARASA Digital</h2>
-  <p>
-    NARASA Digital merupakan majalah digital yang menjadi ruang
-    kreativitas dan informasi seputar bahasa, sastra, pendidikan,
-    serta budaya.
-  </p>
+
+<!-- HALAMAN DAFTAR FEATURE -->
+<section id="features" class="page">
+  <div class="inner-hero">
+    <div class="eyebrow">KARYA MAHASISWA</div>
+    <h1>Feature</h1>
+    <p>Jelajahi tulisan dan cerita dari 37 mahasiswa.</p>
+  </div>
+
+  <div class="container content-area">
+    <button class="back-button" onclick="goHome()">← Kembali ke Beranda</button>
+
+    <div class="section-heading">
+      <span>Ruang Karya</span>
+      <h2>Tulisan Feature Mahasiswa</h2>
+      <p>Pilih salah satu tulisan untuk membaca selengkapnya.</p>
+    </div>
+
+    <input
+      id="featureSearch"
+      class="search-box"
+      type="search"
+      placeholder="Cari judul tulisan atau nama penulis..."
+      oninput="renderFeatures()">
+
+    <div id="featureList" class="item-grid"></div>
+  </div>
 </section>
+
+
+<!-- DETAIL FEATURE -->
+<section id="featureDetail" class="page">
+  <div class="inner-hero">
+    <div class="eyebrow">KARYA MAHASISWA</div>
+    <h1>Detail Feature</h1>
+    <p>Membaca karya dan pemikiran mahasiswa.</p>
+  </div>
+
+  <div class="container content-area">
+    <button class="back-button" onclick="showPage('features')">
+      ← Kembali ke Daftar Feature
+    </button>
+    <div id="featureDetailContent" class="detail-card"></div>
+  </div>
+</section>
+
+
+<!-- HALAMAN PROFIL -->
+<section id="profiles" class="page">
+  <div class="inner-hero">
+    <div class="eyebrow">MEREKA DI BALIK KARYA</div>
+    <h1>Profil Mahasiswa</h1>
+    <p>Kenali cerita dan keunikan setiap mahasiswa.</p>
+  </div>
+
+  <div class="container content-area">
+    <button class="back-button" onclick="goHome()">← Kembali ke Beranda</button>
+
+    <div class="section-heading">
+      <span>Ruang Cerita</span>
+      <h2>Kenali Mahasiswa NARASA</h2>
+      <p>Pilih nama mahasiswa untuk melihat profil lengkapnya.</p>
+    </div>
+
+    <input
+      id="profileSearch"
+      class="search-box"
+      type="search"
+      placeholder="Cari nama mahasiswa..."
+      oninput="renderProfiles()">
+
+    <div id="profileList" class="item-grid"></div>
+  </div>
+</section>
+
+
+<!-- DETAIL PROFIL -->
+<section id="profileDetail" class="page">
+  <div class="inner-hero">
+    <div class="eyebrow">PROFIL MAHASISWA</div>
+    <h1>Cerita Mereka</h1>
+    <p>Setiap orang memiliki cerita dan cita-cita.</p>
+  </div>
+
+  <div class="container content-area">
+    <button class="back-button" onclick="showPage('profiles')">
+      ← Kembali ke Daftar Mahasiswa
+    </button>
+    <div id="profileDetailContent" class="detail-card"></div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <h3>NARASA DIGITAL</h3>
+  <strong>NARASA</strong>
+  Ruang Karya dan Cerita Mahasiswa
   <p>Ruang Ekspresi, Informasi, dan Kreativitas Mahasiswa</p>
-  <p>© 2026 NARASA Digital. All Rights Reserved.</p>
+  <p style="margin-top:12px;">© 2026 NARASA Digital</p>
 </footer>
+
+
+<script>
+
+/* =====================================
+   DATA FEATURE
+   Ganti judul, penulis, dan isi tulisan
+   sesuai data mahasiswa yang sebenarnya.
+===================================== */
+
+const features = Array.from({length: 37}, (_, i) => ({
+  id: i + 1,
+  title: `Judul Feature ${String(i + 1).padStart(2, "0")}`,
+  author: `Nama Penulis ${String(i + 1).padStart(2, "0")}`,
+  content: "Tuliskan isi lengkap feature mahasiswa di bagian ini. Kamu bisa mengganti teks ini dengan tulisan asli mahasiswa."
+}));
+
+
+/* =====================================
+   DATA PROFIL MAHASISWA
+   Foto boleh dikosongkan terlebih dahulu.
+   Isi foto dengan nama file gambar nanti.
+===================================== */
+
+const profiles = Array.from({length: 37}, (_, i) => ({
+  id: i + 1,
+  name: `Nama Mahasiswa ${String(i + 1).padStart(2, "0")}`,
+  photo: "",
+  hobby: "Belum diisi",
+  dream: "Belum diisi",
+  birthday: "Belum diisi",
+  quote: "Tuliskan kata-kata favorit di sini."
+}));
+
+
+/* =====================================
+   NAVIGASI HALAMAN
+===================================== */
+
+function showPage(pageId) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(pageId).classList.add("active");
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function goHome() {
+  showPage("home");
+}
+
+
+/* =====================================
+   MENAMPILKAN DAFTAR FEATURE
+===================================== */
+
+function renderFeatures() {
+  const list = document.getElementById("featureList");
+  const search = document.getElementById("featureSearch").value.toLowerCase();
+
+  const filtered = features.filter(item =>
+    item.title.toLowerCase().includes(search) ||
+    item.author.toLowerCase().includes(search)
+  );
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="empty-message">Tulisan tidak ditemukan.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(item => `
+    <button class="item-card" onclick="openFeature(${item.id})">
+      <span class="item-no">FEATURE ${String(item.id).padStart(2, "0")}</span>
+      <h3>${escapeHTML(item.title)}</h3>
+      <p>Penulis: ${escapeHTML(item.author)}</p>
+      <span class="menu-link">BACA SELENGKAPNYA →</span>
+    </button>
+  `).join("");
+}
+
+
+function openFeature(id) {
+  const item = features.find(feature => feature.id === id);
+  if (!item) return;
+
+  document.getElementById("featureDetailContent").innerHTML = `
+    <div class="detail-meta">
+      FEATURE ${String(item.id).padStart(2, "0")} · KARYA MAHASISWA
+    </div>
+    <h2>${escapeHTML(item.title)}</h2>
+    <div class="detail-meta">Ditulis oleh: ${escapeHTML(item.author)}</div>
+    <div class="detail-body">${escapeHTML(item.content)}</div>
+  `;
+
+  showPage("featureDetail");
+}
+
+
+/* =====================================
+   MENAMPILKAN DAFTAR PROFIL
+===================================== */
+
+function renderProfiles() {
+  const list = document.getElementById("profileList");
+  const search = document.getElementById("profileSearch").value.toLowerCase();
+
+  const filtered = profiles.filter(item =>
+    item.name.toLowerCase().includes(search)
+  );
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="empty-message">Nama mahasiswa tidak ditemukan.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(item => `
+    <button class="item-card" onclick="openProfile(${item.id})">
+      ${
+        item.photo
+          ? `<img class="profile-photo" src="${escapeHTML(item.photo)}" alt="Foto ${escapeHTML(item.name)}">`
+          : `<div class="profile-initial">${escapeHTML(item.name.charAt(0))}</div>`
+      }
+      <span class="item-no">MAHASISWA ${String(item.id).padStart(2, "0")}</span>
+      <h3>${escapeHTML(item.name)}</h3>
+      <p>Lihat profil lengkap →</p>
+    </button>
+  `).join("");
+}
+
+
+function openProfile(id) {
+  const item = profiles.find(profile => profile.id === id);
+  if (!item) return;
+
+  document.getElementById("profileDetailContent").innerHTML = `
+    ${
+      item.photo
+        ? `<img class="profile-detail-photo" src="${escapeHTML(item.photo)}" alt="Foto ${escapeHTML(item.name)}">`
+        : `<div class="profile-initial" style="margin:0 auto 20px;width:110px;height:110px;font-size:35px;">${escapeHTML(item.name.charAt(0))}</div>`
+    }
+
+    <h2 style="text-align:center;">${escapeHTML(item.name)}</h2>
+    <p class="detail-meta" style="text-align:center;">
+      MAHASISWA NARASA · ${String(item.id).padStart(2, "0")}
+    </p>
+
+    <div class="profile-facts">
+      <div class="fact">
+        <span>Hobi</span>
+        <strong>${escapeHTML(item.hobby)}</strong>
+      </div>
+
+      <div class="fact">
+        <span>Cita-cita</span>
+        <strong>${escapeHTML(item.dream)}</strong>
+      </div>
+
+      <div class="fact">
+        <span>Tanggal Lahir</span>
+        <strong>${escapeHTML(item.birthday)}</strong>
+      </div>
+    </div>
+
+    <div class="quote">
+      "${escapeHTML(item.quote)}"
+    </div>
+  `;
+
+  showPage("profileDetail");
+}
+
+
+/* Mencegah teks data dibaca sebagai kode HTML */
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+
+/* Tampilkan daftar saat website dibuka */
+
+renderFeatures();
+renderProfiles();
+
+</script>
 
 </body>
 </html>
